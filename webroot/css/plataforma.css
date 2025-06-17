@@ -1,0 +1,145 @@
+/* Estilos gerais */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #077187;
+}
+
+/* Header */
+header {
+    background: #50a3a2;
+    color: #ffffff;
+    padding: 15px 0;
+    min-height: 70px;
+    border-bottom: #077187 3px solid;
+    display: flex;
+    align-items: center;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Ícone do Carrinho */
+.cart-icon {
+    position: relative;
+}
+
+.cart-icon a {
+    display: block;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #e63946;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+/* Grid de Plantas */
+.plants-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.plant-card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.plant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.plant-card img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.plant-card h3 {
+    margin: 10px 0;
+    color: #333;
+    font-size: 1.4em;
+}
+
+.plant-card p {
+    color: #666;
+    font-size: 1em;
+    flex-grow: 1; /* Faz a descrição ocupar o espaço disponível */
+}
+
+.price {
+    font-weight: bold;
+    color: #50a3a2;
+    margin: 15px 0;
+    font-size: 1.2em;
+}
+
+.add-to-cart-button, .out-of-stock {
+    display: inline-block;
+    width: 100%;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.add-to-cart-button {
+    background-color: #50a3a2;
+}
+
+.add-to-cart-button:hover {
+    background-color: #077187;
+}
+
+.out-of-stock {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
