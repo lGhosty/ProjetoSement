@@ -1,0 +1,35 @@
+
+services:
+  # Serviço da Aplicação PHP (CakePHP)
+  app:
+    build: .
+    container_name: sementinha-app
+    ports:
+      - "8765:80"
+    volumes:
+      - ./:/var/www/html
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_DATABASE=sementinha_db
+      - DB_USER=sementinha_user
+      - DB_PASSWORD=sua_senha_segura
+      - SECURITY_SALT=${SECURITY_SALT}
+
+  # Serviço do Banco de Dados (MySQL)
+  db:
+    image: mysql:8.0
+    container_name: sementinha-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: sua_senha_root_super_segura
+      MYSQL_DATABASE: sementinha_db
+      MYSQL_USER: sementinha_user
+      MYSQL_PASSWORD: sua_senha_segura
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
